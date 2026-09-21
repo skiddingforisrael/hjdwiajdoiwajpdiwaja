@@ -1,0 +1,96 @@
+{
+  "BlocksVPImage": "0",
+  "ClayBlue": "123279654455704", // Clay are textures. We will replace Clay with wool.
+  "ClayCyan": "90552220531197",
+  "ClayGreen": "113683881748361",
+  "ClayGrey": "140638469850423",
+  "ClayOrange": "84346003587356",
+  "ClayPurple": "132267887157471",
+  "ClayRed": "119271415439525",
+  "ClayWhite": "97691936558655",
+  "ClayYellow": "79267012398801",
+
+  "Moon": "6444320592", // Ignore Sky for now, we will add it later on.
+  "Sun": "6196665106",
+  "SkyBack": "13540744223",
+  "SkyBottom": "6412503613",
+  "SkyBoxRotationSpeed": "0",
+  "SkyFront": "13540744223",
+  "SkyLeft": "13540744223",
+  "SkyRight": "13540744223",
+  "SkyTop": "6412503613",
+
+  "SwordMesh": "104827456591826", // Mesh we exported for sword, All swords and pickaxes use the SAME mesh. Therefore we dont need to generate meshes for each sword and pickaxe
+  "SwordTexture": "104843502954866", //
+  "SwordVPImage": "104843502954866", // Non Edge Expanded Texture (all VPImage (viewport images) will use non edge expanded versions!)
+  "DiamondSwordTexture": "79558332190721", // Textures for all swords and their VPImages. set VP image to non edge expanded
+  "DiamondSwordVPImage": "79558332190721",
+  "GoldSwordTexture": "99791742395037",
+  "GoldSwordVPImage": "99791742395037",
+  "WoodenSwordTexture": "86452716266136",
+  "WoodenSwordVPImage": "86452716266136",
+
+  "PickaxeMesh": "101229343521686", // Same as sword here!
+  "PickaxeVPImage": "88288870749393",
+  "DiamondPickaxeTexture": "71509707648394",
+  "DiamondPickaxeVPImage": "71509707648394",
+  "GoldPickaxeTexture": "98357557525575", // We replaced gold with IRON. Our IRON swords are actually gold in the game. iron_pickaxe.png is mapping to GoldPickaxeTexture
+  "GoldPickaxeVPImage": "98357557525575", // do the same replacement on swords too they also use gold and not iron.
+  "WoodenPickaxeTexture": "92003726149378",
+  "WoodenPickaxeVPImage": "92003726149378",
+
+  "AxeMesh": "103264807025473", // same thing wiwth the rest
+  "AxeVPImage": "109633191239964",
+  "DiamondAxeTexture": "92777463332130",
+  "DiamondAxeVPImage": "92777463332130",
+  "GoldAxeTexture": "115346856191624",
+  "GoldAxeVPImage": "115346856191624",
+  "WoodenAxeTexture": "76080019691195",
+  "WoodenAxeVPImage": "76080019691195",
+
+  "DefaultBowVPImage": "111309121527502", // Bow VP Image is the standby bow texture
+  "Bow0Mesh": "138204986375891", // bow 0
+  "Bow0Texture": "111309121527502", // bow 0 edge expanded
+  "Bow1Mesh": "124215704798582", // bow 1 mesh
+  "Bow1Texture": "124444591663846",
+  "Bow2Mesh": "127835767126798",
+  "Bow2Texture": "103350878473788",
+  "Bow3Mesh": "93420068320238",
+  "Bow3Texture": "101514571047128", // goes on like that again theres 4 bow textures here but 1 mesh for all
+
+  "GoldAppleMesh": "125384839136587", // Golden apple stuff
+  "GoldAppleTexture": "81012318535869",
+  "GoldAppleVPImage": "81012318535869",
+
+  "IronMesh": "95719649169705", // Iron
+  "IronTexture": "82750807499488",
+  "IronVPImage": "82750807499488",
+
+  "DiamondMesh": "127107393687745", // Diamond
+  "DiamondTexture": "86546708462840",
+  "DiamondVPImage": "86546708462840",
+
+  "EmeraldMesh": "136857328828017",
+  "EmeraldTexture": "113753761495299",
+  "EmeraldVPImage": "113753761495299",
+
+  "PearlMesh": "131647636332888",
+  "PearlTexture": "73032041557690",
+  "PearlVPImage": "73032041557690",
+
+  "ShearsMesh": "115605442333552",
+  "ShearsTexture": "89879072411822",
+  "ShearsVPImage": "89879072411822",
+
+  "FireballMesh": "133643739887768",
+  "FireballTexture": "117452902798603",
+  "FireballVPImage": "117452902798603",
+
+  "JumpPotionMesh": "74104466946148",
+  "JumpPotionTexture": "114882559052168",
+  "JumpPotionVPImage": "114882559052168",
+
+  "SpeedPotionMesh": "74104466946148",
+  "SpeedPotionTexture": "93740720981122",
+  "SpeedPotionVPImage": "93740720981122",
+}

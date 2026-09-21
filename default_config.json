@@ -1,0 +1,280 @@
+{
+  "BlocksVPImage": "0",
+  "ClayBlue": "123279654455704",
+  "ClayCyan": "90552220531197",
+  "ClayGreen": "113683881748361",
+  "ClayGrey": "140638469850423",
+  "ClayOrange": "84346003587356",
+  "ClayPurple": "132267887157471",
+  "ClayRed": "119271415439525",
+  "ClayWhite": "97691936558655",
+  "ClayYellow": "79267012398801",
+  "SwordMesh": "104827456591826",
+  "SwordTexture": "104843502954866",
+  "SwordVPImage": "104843502954866",
+  "SwordScale": [
+    2,
+    2,
+    2
+  ],
+  "SwordBlockingScale": [
+    2,
+    2,
+    2
+  ],
+  "SwordRotation": [
+    0,
+    -180,
+    0
+  ],
+  "SwordBlockingRotation": [
+    -45,
+    110,
+    -30
+  ],
+  "AmethystSwordTexture": "123404312549434",
+  "AmethystSwordVPImage": "123404312549434",
+  "DiamondSwordTexture": "79558332190721",
+  "DiamondSwordVPImage": "79558332190721",
+  "GoldSwordTexture": "99791742395037",
+  "GoldSwordVPImage": "99791742395037",
+  "WoodenSwordTexture": "86452716266136",
+  "WoodenSwordVPImage": "86452716266136",
+  "PickaxeMesh": "101229343521686",
+  "PickaxeTexture": "88288870749393",
+  "PickaxeVPImage": "88288870749393",
+  "PickaxeScale": [
+    2,
+    2,
+    2
+  ],
+  "PickaxeRotation": [
+    0,
+    0,
+    0
+  ],
+  "DiamondPickaxeTexture": "71509707648394",
+  "DiamondPickaxeVPImage": "71509707648394",
+  "GoldPickaxeTexture": "98357557525575",
+  "GoldPickaxeVPImage": "98357557525575",
+  "WoodenPickaxeTexture": "92003726149378",
+  "WoodenPickaxeVPImage": "92003726149378",
+  "AxeMesh": "103264807025473",
+  "AxeTexture": "109633191239964",
+  "AxeVPImage": "109633191239964",
+  "AxeScale": [
+    2,
+    2,
+    2
+  ],
+  "AxeRotation": [
+    0,
+    0,
+    0
+  ],
+  "DiamondAxeTexture": "92777463332130",
+  "DiamondAxeVPImage": "92777463332130",
+  "GoldAxeTexture": "115346856191624",
+  "GoldAxeVPImage": "115346856191624",
+  "WoodenAxeTexture": "76080019691195",
+  "WoodenAxeVPImage": "76080019691195",
+  "DefaultBowVPImage": "111309121527502",
+  "DefaultBowScale": [
+    2.25,
+    2.25,
+    2.25
+  ],
+  "DefaultBowRotation": [
+    3,
+    10,
+    0
+  ],
+  "Bow0Mesh": "138204986375891",
+  "Bow0Texture": "111309121527502",
+  "Bow1Mesh": "124215704798582",
+  "Bow1Texture": "124444591663846",
+  "Bow2Mesh": "127835767126798",
+  "Bow2Texture": "103350878473788",
+  "Bow3Mesh": "93420068320238",
+  "Bow3Texture": "101514571047128",
+  "GoldAppleMesh": "125384839136587",
+  "GoldAppleTexture": "81012318535869",
+  "GoldAppleVPImage": "81012318535869",
+  "GoldAppleScale": [
+    2,
+    2,
+    2
+  ],
+  "GoldAppleEatingScale": [
+    2,
+    2,
+    2
+  ],
+  "GoldAppleRotation": [
+    0,
+    90,
+    0
+  ],
+  "IronMesh": "95719649169705",
+  "IronTexture": "82750807499488",
+  "IronVPImage": "82750807499488",
+  "IronScale": [
+    1.5,
+    1.5,
+    1.5
+  ],
+  "IronRotation": [
+    0,
+    0,
+    35
+  ],
+  "DiamondMesh": "127107393687745",
+  "DiamondTexture": "86546708462840",
+  "DiamondVPImage": "86546708462840",
+  "DiamondScale": [
+    1.75,
+    1.75,
+    1.75
+  ],
+  "DiamondRotation": [
+    0,
+    0,
+    35
+  ],
+  "EmeraldMesh": "136857328828017",
+  "EmeraldTexture": "113753761495299",
+  "EmeraldVPImage": "113753761495299",
+  "EmeraldScale": [
+    1.75,
+    1.75,
+    1.75
+  ],
+  "EmeraldRotation": [
+    0,
+    0,
+    35
+  ],
+  "PearlMesh": "131647636332888",
+  "PearlTexture": "73032041557690",
+  "PearlVPImage": "73032041557690",
+  "PearlScale": [
+    2,
+    2,
+    2
+  ],
+  "PearlRotation": [
+    0,
+    0,
+    35
+  ],
+  "ShearsMesh": "115605442333552",
+  "ShearsTexture": "89879072411822",
+  "ShearsVPImage": "89879072411822",
+  "ShearsScale": [
+    2,
+    2,
+    2
+  ],
+  "ShearsRotation": [
+    0,
+    0,
+    35
+  ],
+  "FireballMesh": "133643739887768",
+  "FireballTexture": "117452902798603",
+  "FireballVPImage": "117452902798603",
+  "FireballScale": [
+    2,
+    2,
+    2
+  ],
+  "FireballRotation": [
+    0,
+    0,
+    35
+  ],
+  "JumpPotionMesh": "74104466946148",
+  "JumpPotionTexture": "114882559052168",
+  "JumpPotionVPImage": "114882559052168",
+  "JumpPotionScale": [
+    2,
+    2,
+    2
+  ],
+  "JumpPotionRotation": [
+    35,
+    -90,
+    0
+  ],
+  "SpeedPotionMesh": "74104466946148",
+  "SpeedPotionTexture": "93740720981122",
+  "SpeedPotionVPImage": "93740720981122",
+  "SpeedPotionScale": [
+    2,
+    2,
+    2
+  ],
+  "SpeedPotionRotation": [
+    35,
+    -90,
+    0
+  ],
+  "MeteorStaffMesh": "87984534694366",
+  "MeteorStaffTexture": "89612676321968",
+  "MeteorStaffVPImage": "89612676321968",
+  "MeteorStaffScale": [
+    2,
+    2,
+    2
+  ],
+  "MeteorStaffRotation": [
+    0,
+    -90,
+    0
+  ],
+  "RegenStaffMesh": "119901239018131",
+  "RegenStaffTexture": "124849718690096",
+  "RegenStaffVPImage": "124849718690096",
+  "RegenStaffScale": [
+    2,
+    2,
+    2
+  ],
+  "RegenStaffRotation": [
+    0,
+    -90,
+    0
+  ],
+  "SpeedStaffMesh": "121802550717928",
+  "SpeedStaffTexture": "127223444373164",
+  "SpeedStaffVPImage": "127223444373164",
+  "SpeedStaffScale": [
+    2,
+    2,
+    2
+  ],
+  "SpeedStaffRotation": [
+    0,
+    -90,
+    0
+  ],
+  "WindStaffMesh": "104184235843823",
+  "WindStaffTexture": "81928689192909",
+  "WindStaffVPImage": "81928689192909",
+  "WindStaffScale": [
+    2,
+    2,
+    2
+  ],
+  "WindStaffRotation": [
+    0,
+    -90,
+    0
+  ],
+  "SkyFront": "0",
+  "SkyBack": "0",
+  "SkyTop": "0",
+  "SkyBottom": "0",
+  "SkyLeft": "0",
+  "SkyRight": "0"
+}
