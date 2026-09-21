@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17120d">
+  <meta name="description" content="Convert Minecraft 1.8.9 texture packs into Roblox assets.">
+  <title>Cone</title>
+  <link rel="icon" href="/cone.png?v=150" type="image/png">
+  <link rel="preload" href="/fonts/FredokaOne-Regular.ttf?v=150" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="/fonts/LuckiestGuy-Regular.ttf?v=150" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="/styles.css?v=171">
+</head>
+<body>
+  <main class="page">
+    <section class="page-view" id="view-home">
+    <section class="workspace" aria-label="Cone texture pack converter">
+      <div class="cone-side" aria-hidden="true">
+        <div class="cone-art" id="cone-art" data-state="idle">
+          <img id="cone-image" src="/cone.png" alt="">
+        </div>
+      </div>
+
+      <section class="converter" aria-label="Choose and convert a texture pack">
+        <header class="converter-intro">
+          <p>Cone</p>
+          <h1>Minecraft 1.8.9 <span>to</span> BridgeDuel</h1>
+        </header>
+
+        <form id="convert-form">
+          <section class="step">
+            <p class="step-head"><span class="step-num">1</span>Texture pack</p>
+
+            <label class="drop-zone" id="drop-zone" for="pack-input">
+              <input id="pack-input" name="pack" type="file" accept=".zip,application/zip" required>
+              <span class="drop-title">Drop your texture pack here</span>
+              <span class="drop-copy">or click to browse</span>
+              <span class="drop-kicker">Minecraft 1.8.9 · ZIP</span>
+            </label>
+
+            <div class="selected-file" id="selected-file" hidden>
+              <span class="file-badge">ZIP</span>
+              <span class="file-info">
+                <strong id="file-name"></strong>
+                <small id="file-size"></small>
+              </span>
+              <button class="text-button" id="remove-file" type="button">Remove</button>
+            </div>
+          </section>
+
+          <div class="port-row">
+            <button class="primary-button" id="convert-button" type="submit" disabled>Port pack</button>
+            <button class="settings-button" id="settings-open-button" type="button" aria-label="Roblox credentials">
+              <svg class="settings-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </button>
+          </div>
+        </form>
+
+        <section class="progress-panel" id="progress-panel" aria-live="polite" hidden>
+          <div class="status-row">
+            <div>
+              <p class="status-label" id="status-label">Preparing</p>
+              <p class="status-detail" id="status-detail">Reading texture pack…</p>
+            </div>
+            <span class="status-percent" id="status-percent">0%</span>
+          </div>
+          <div class="progress-track" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-track">
+            <span id="progress-bar"></span>
+          </div>
+          <div class="activity-log" id="activity-log" role="log" aria-label="Porting log" aria-live="polite"></div>
+          <p class="status-error" id="status-error" hidden></p>
+        </section>
+
+      </section>
+
+      <p class="open-source-note">Austria is a complete <a class="github-link" href="https://www.dictionary.com/browse/bum" target="_blank" rel="noreferrer">Bum.</a></p>
+    </section>
+    </section>
+
+    <section class="page-view" id="view-library" hidden>
+      <section class="workspace workspace-single" aria-label="Cone port library">
+        <header class="page-head">
+          <p class="page-kicker">Library</p>
+          <h1>Port history</h1>
+          <p class="page-copy">Every texture pack this Cone instance has ported.</p>
+        </header>
+        <div class="history-search">
+          <input type="search" id="history-search" placeholder="Search packs…" autocomplete="off" spellcheck="false" aria-label="Search packs">
+          <label class="library-sort" for="library-sort">
+            <span class="library-sort-label">Sort</span>
+            <select id="library-sort" aria-label="Sort library">
+              <option value="latest">Newest</option>
+              <option value="oldest">Oldest</option>
+            </select>
+          </label>
+        </div>
+        <div class="history-list" id="history-list" aria-live="polite">
+          <p class="history-state" id="history-state">Loading port history…</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <div class="preview-modal" id="preview-modal" role="dialog" aria-modal="true" aria-labelledby="preview-title" hidden>
+    <button class="preview-backdrop" id="preview-backdrop" type="button" aria-label="Close preview"></button>
+    <section class="preview-card" aria-live="polite">
+      <button class="preview-close" id="preview-close-button" type="button" aria-label="Close preview">✕</button>
+      <img class="preview-image" id="preview-image" alt="">
+      <div class="preview-details">
+        <p class="preview-kicker">Library</p>
+        <h2 id="preview-title"></h2>
+        <p class="preview-meta" id="preview-meta"></p>
+      </div>
+    </section>
+  </div>
+
+  <div class="sky-modal" id="sky-modal" role="dialog" aria-modal="true" aria-labelledby="sky-modal-title" hidden>
+    <button class="sky-modal-backdrop" id="sky-modal-backdrop" type="button" aria-label="Close"></button>
+    <section class="sky-modal-card">
+      <h2 id="sky-modal-title">Choose a sky</h2>
+      <p class="sky-modal-subtitle">Pick the sky for this pack. The others can be ported as separate sky-only packs.</p>
+      <div class="sky-options" id="sky-options"></div>
+      <div class="sky-modal-actions">
+        <button class="secondary-button sky-all-extras" id="sky-all-extras-button" type="button">All as extras</button>
+        <div class="sky-modal-actions-right">
+          <button class="secondary-button" id="sky-skip-button" type="button">Skip skies</button>
+          <button class="secondary-button" id="sky-cancel-button" type="button">Cancel</button>
+          <button class="primary-button" id="sky-port-button" type="button">Port pack</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="settings-modal" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-modal-title" hidden>
+    <button class="settings-backdrop" id="settings-backdrop" type="button" aria-label="Close settings"></button>
+    <section class="settings-card">
+      <header class="settings-header">
+        <p class="settings-kicker">Settings</p>
+        <h2 id="settings-modal-title">Roblox credentials</h2>
+      </header>
+
+      <details class="setup-guide">
+        <summary>First time? Set up a Roblox API key</summary>
+        <ol>
+          <li><a href="https://create.roblox.com/dashboard/credentials?activeTab=ApiKeysTab" target="_blank" rel="noreferrer">Create an API key</a> in Creator Dashboard.</li>
+          <li>Add <strong>Assets: Read + Write</strong>, <strong>Asset Permissions: Write</strong>, and <strong>Legacy Assets: Manage</strong>.</li>
+          <li>Generate the key, then paste it below with your numeric user ID.</li>
+        </ol>
+        <p>Leave IP restriction off.</p>
+      </details>
+
+      <div class="credential-fields">
+        <label>
+          <span>Roblox user ID</span>
+          <input id="user-id-input" type="text" inputmode="numeric" pattern="[0-9]+" maxlength="32" placeholder="123456789" autocomplete="off" required>
+        </label>
+        <label>
+          <span>Open Cloud API key</span>
+          <span class="secret-field">
+            <input id="api-key-input" type="password" maxlength="8192" placeholder="Paste API key" autocomplete="off" spellcheck="false" required>
+            <button class="secret-toggle" id="secret-toggle" type="button" aria-label="Show API key" aria-pressed="false">Show</button>
+          </span>
+        </label>
+      </div>
+
+      <div class="credential-options">
+        <label class="remember-option">
+          <input id="remember-credentials" type="checkbox" checked>
+          <span>Remember on this device</span>
+        </label>
+        <span class="credential-note">Stored only in this browser, never on Cone's server.</span>
+      </div>
+
+      <div class="settings-actions">
+        <button class="primary-button" id="settings-done-button" type="button">Done</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="result-modal" id="result-modal" role="dialog" aria-modal="true" aria-labelledby="result-title" hidden>
+    <button class="result-backdrop" id="result-backdrop" type="button" aria-label="Close JSON result"></button>
+    <section class="result-card" aria-live="polite">
+      <div class="result-mark" aria-hidden="true">✓</div>
+      <div>
+        <p class="result-kicker">Port complete</p>
+        <h2 id="result-title">JSON ready</h2>
+        <p class="result-copy">Copy this into your game configuration.</p>
+      </div>
+      <div class="result-actions">
+        <button class="secondary-button" id="close-result-button" type="button">Close</button>
+        <button class="copy-button" id="copy-button" type="button">Copy JSON</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="/app.js?v=171" defer></script>
+</body>
+</html>

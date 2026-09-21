@@ -1,0 +1,55 @@
+server {
+    # Cloudflare Tunnel targets http://localhost:80. Keep the Pi's existing
+    # listener shape so this deployment does not disturb local connectivity.
+    listen 80;
+    server_name qstr.xyz www.qstr.xyz;
+
+    client_max_body_size 136m;
+    # Home upload speeds vary a lot, and a 128 MB pack can take well over
+    # 30s to fully arrive; nginx's default-ish 30s only needs a single gap
+    # between body reads to trip and reset the connection mid-upload, which
+    # the browser then reports as a bare "Failed to fetch" with no server
+    # response at all. Give it room to match the generous read/send
+    # timeouts already set below for the conversion itself.
+    client_body_timeout 5m;
+    client_header_timeout 10s;
+    keepalive_timeout 30s;
+
+    access_log /var/log/nginx/cone_access.log;
+    error_log  /var/log/nginx/cone_error.log warn;
+
+    location = /api/convert {
+        limit_req zone=cone_port_rate burst=2 nodelay;
+        limit_req_status 429;
+        limit_conn cone_client_connections 2;
+        limit_conn cone_total_connections 4;
+        limit_conn_status 429;
+
+        # Buffer the bounded upload at nginx, but stream Cone's NDJSON logs and
+        # final result to the browser immediately.
+        proxy_request_buffering on;
+        proxy_buffering off;
+        proxy_cache off;
+        gzip off;
+        proxy_read_timeout 20m;
+        proxy_send_timeout 2m;
+
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $cone_client_key;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8080;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $cone_client_key;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $http_x_forwarded_proto;
+    }
+}
